@@ -6,6 +6,7 @@ import compression from 'compression';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import router from './router';
+import mongoURL from './config';
 
 const app = express();
 
@@ -23,10 +24,8 @@ server.listen(8080, () => {
     console.log('Server running on http://localhost:8080');
 })
 
-const MONGO_URL = "mongodb+srv://johnajias:johnajias@cluster0.kppqr4c.mongodb.net/?retryWrites=true&w=majority";
-
 mongoose.Promise = Promise;
-mongoose.connect(MONGO_URL);
+mongoose.connect(mongoURL);
 mongoose.connection.on('error', (error: Error) => console.log(error));
 
 app.use('/', router());
