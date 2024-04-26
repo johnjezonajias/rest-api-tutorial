@@ -28,6 +28,7 @@ Once the installation is complete, you can run the following command to start th
 
 ```bash
 npm start
+```
 
 The server will be running at http://localhost:8080, and you can begin making requests to the API endpoints as described in the tutorial.
 
